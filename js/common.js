@@ -27,4 +27,28 @@ $(function() {
 		dropdownMenu.toggleClass('b-user__dropdown_visible');
 	});
 
+	let payment = $('#payment-system');
+	
+	payment.on('change', function() {
+		payment.css({"color" : "#fff", "font-family" : "RobotoCondensedBold"});
+	});
+
+
+	let deskToggle = $('.desk-controls__toggle');
+	let deskContent = $('.desk-content__box');
+
+	deskToggle.on('click', function(e) {
+		e.preventDefault();
+		deskToggle.removeClass('desk-controls__toggle_active');
+		$(this).addClass('desk-controls__toggle_active');
+		deskContent.removeClass('desk-content__box_visible');
+		if ($(this).hasClass('desk-controls__toggle_left')){
+			$('.desk-content__box_left').addClass('desk-content__box_visible');
+		} else {
+			$('.desk-content__box_right').addClass('desk-content__box_visible');
+		}
+		
+	});
+
+	
 });
