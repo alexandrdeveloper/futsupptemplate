@@ -1,5 +1,7 @@
 $(function() {
 
+
+
 	let navbar = $('.b-navbar');
 	let navBtn = $('.b-navbar-toggle');
 
@@ -74,5 +76,10 @@ $(function() {
 	accordeonHead.filter(':first').toggleClass(accordeonHeadActiveClass).next().show();
 	accordeonHead.on('click', accordeonClickToggle);
 
-	
+	let menuLink = $('.b-menu__link');
+
+	menuLink.on('click', function() {
+		menuLink.removeClass('b-menu__link_active');
+		$(this).toggleClass('b-menu__link_active');
+	});
 });
